@@ -2,7 +2,10 @@
 
 ## Install from sources
 
-From http://nginx.org/en/docs/install.html. If some special functionality is required, not available with packages and ports, nginx can also be compiled from source files. While more flexible, this approach may be complex for a beginner. For more information, see [Building nginx from Sources](http://nginx.org/en/docs/configure.html).
+From http://nginx.org/en/docs/install.html.
+If some special functionality is required, not available with packages and ports, nginx can also be compiled from source files.
+While more flexible, this approach may be complex for a beginner.
+For more information, see [Building nginx from Sources](http://nginx.org/en/docs/configure.html).
 
 The command to download Nginx source code. Link can be found in nginx.org download tab.
 
@@ -68,3 +71,19 @@ PrivateTmp=true
 WantedBy=multi-user.target
 ```
 
+## Configuration
+
+In the /etc/nginx/nginx.conf. Simple configuration for vitual host.
+The include mine.types is to map the Content-Type response header according to file extension.
+
+```bash
+http {
+    include mime.types;
+
+    server {
+        listen       80;
+        server_name  localhost;
+        root /var/www/demo;
+    }
+}
+```
