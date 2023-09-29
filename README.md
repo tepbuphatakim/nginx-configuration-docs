@@ -100,15 +100,33 @@ http {
         root /var/www/demo;
 
         location /prefix {
-                return 200 'Nginx prefix match.';
+            return 200 'Nginx prefix match.';
         }
 
         location = /exact {
-                return 200 'Nginx exact match.';
+            return 200 'Nginx exact match.';
         }
 
         location ~ /regex[0-9] {
-                return 200 'Nginx regex match 0 - 9';
+            return 200 'Nginx regex match 0 - 9';
+        }
+    }
+}
+```
+
+Nginx build-in variables.
+
+```bash
+http {
+    include mime.types;
+
+    server {
+        listen       80;
+        server_name  localhost;
+        root /var/www/demo;
+
+        location = /var {
+            return 200 'Host: $host\n URI: $uri\n Query: $args';
         }
     }
 }
