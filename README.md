@@ -131,3 +131,21 @@ http {
     }
 }
 ```
+
+Nginx redirect, redirect to new url.
+
+```bash
+http {
+    include mime.types;
+
+    server {
+        listen       80;
+        server_name  localhost;
+        root /var/www/demo;
+
+        location = /redirect {
+            return 307 /uri;
+        }
+    }
+}
+```
