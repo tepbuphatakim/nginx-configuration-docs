@@ -149,3 +149,24 @@ http {
     }
 }
 ```
+
+Nginx try files. Try files will looking from the argument from left to right relative with the root until the last argument.
+In this case rewrite to 404 location.
+
+```bash
+http {
+    include mime.types;
+
+    server {
+        listen       80;
+        server_name  localhost;
+        root /var/www/demo;
+
+        try_files $uri /404;
+
+        location = /404 {
+            return 404 'Sorry, could not found.';
+        }
+    }
+}
+```
