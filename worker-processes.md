@@ -1,7 +1,7 @@
 # Worker processes
 
 Configure Nginx to run processes according to a given configuration.
-By changing this configuration you can set the Nginx to run at maxnimum hardware power.
+By changing this configuration you can set the Nginx to run at maximum hardware power.
 
 ```bash
 pid /var/run/custom.pid; # Reconfigure pid directory.
