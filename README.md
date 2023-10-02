@@ -170,3 +170,23 @@ http {
     }
 }
 ```
+
+Logging management.
+
+```bash
+http {
+    include mime.types;
+
+    server {
+        listen       80;
+        server_name  localhost;
+        root /var/www/demo;
+
+        location = /log {
+            access_log /var/log/nginx/custom.access.log;
+            # access_log off; Too disabled log
+            return 200 'Log.';
+        }
+    }
+}
+```
