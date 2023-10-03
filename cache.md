@@ -4,7 +4,6 @@ Cache is a way to tell a browser how long it should keep the response store in t
 Instead of request the resources from the server again the browser will use the resources from cache.
 This will help reduce load to the server and improve performance.
 
-
 ```bash
 http {
     include mime.types;
