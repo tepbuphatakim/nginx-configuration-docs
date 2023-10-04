@@ -12,6 +12,7 @@ http {
         listen 80;
         server_name localhost;
         root /var/www/demo;
+        try_files $uri $uri/ index.html /404;
 
         # Cache any response end with the following extension below for 1 month.
         location ~* \.(css|js|jpg|png)$ {
