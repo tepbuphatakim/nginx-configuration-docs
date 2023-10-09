@@ -24,7 +24,7 @@ http {
         server_name localhost;
         root /var/www/demo;
 
-        location /api {
+        location / {
             auth_basic "Administrator’s Area";
             auth_basic_user_file /etc/nginx/.htpasswd;
             try_files $uri $uri/ index.html /404;
